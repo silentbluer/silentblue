@@ -1,6 +1,5 @@
-### silentblue
->   一些JS原生属性方法的测试demo集合
+### 一些JS原生属性方法的测试demo集合
 
-#### entries()、keys()、values()数组、对象遍历
+#### 1、entries()、keys()、values()数组、对象遍历
 
-![1](./README/README/1.png)
+<img src="./README/README/1.png" alt="1" style="zoom: 67%;" />
