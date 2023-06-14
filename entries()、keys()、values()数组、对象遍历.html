@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>entries()、keys()、values()数组、对象遍历</title>
+</head>
+
+<body>
+    <script>
+        let arr = [
+            { id: 1, name: "John" },
+            { id: 2, name: "Pete" },
+            { id: 3, name: "Mary" },
+        ];
+        let arr2 = {
+            name: 'Tom',
+            age: '3',
+            born: 'us'
+        };
+        //keys是对键名的遍历
+        /*数组*/
+        console.log('%ckeys()方法：', 'font-weight:bold;color:red;font-size:18px')
+        for (let key of arr.keys()) {
+            console.log('%c只有数组可以key of keys()遍历', 'font-style:italic', key, arr.keys());
+        };
+        /*对象*/
+        let keys = Object.keys(arr2);//它返回 obj 对象的所有键名的数组。
+        console.log('对象的keys()与数组不同,Object.keys(arr2)', keys);
+
+
+        //values是对键值的遍历
+        /*数组*/
+        console.log('%cvalues()方法：', 'font-weight:bold;color:red;font-size:18px')
+        for (let value of arr.values()) {
+            console.log('%c只有数组可以value of values()遍历', 'font-style:italic', value, arr.values());
+        };
+        /* 对象 */
+        let values = Object.values(arr2);//它返回 obj 对象的所有键值的数组。
+        console.log('对象的values()方法调用Object.values(arr2)', values);
+
+
+        //entries是对键值对的遍历
+        /*数组*/
+        console.log('%centries()方法：', 'font-weight:bold;color:red;font-size:18px')
+        for (let [key, value] of arr.entries()) {
+            console.log('%c只有数组可以[key, value] of arr.entries()遍历', 'font-style:italic', [key, value], key, value)
+        }
+        let entries = Object.entries(arr2);//它返回 obj 对象的所有键值，键名对的数组。
+        console.log('对象的entries()方法调用Object.entries(arr2)', entries);
+    </script>
+</body>
+
+</html>
