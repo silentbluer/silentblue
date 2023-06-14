@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>将border-left-width转换成borderLeftWidth</title>
+</head>
+
+<body>
+    <script>
+        /*
+
+        编写函数 camelize(str) 将诸如 “my-short-string” 之类的由短划线分隔的单词变成骆驼式的 “myShortString”。
+        即：删除所有短横线，并将短横线后的每一个单词的首字母变为大写。
+
+        示例：
+        camelize("background-color") == 'backgroundColor';
+        camelize("list-style-image") == 'listStyleImage';
+        camelize("-webkit-transition") == 'WebkitTransition';
+
+        提示：
+        使用 split 将字符串拆分成数组，对其进行转换之后再 join 回来。
+
+        */
+        function camelize(str) {
+            // 逻辑过程
+            // let strArray = str.split('-');
+            // let strArray2 = strArray.map((item, index, array) => {
+            //     //此处报错，Uncaught TypeError: item.splice is not a function
+            //     // let strs = index === 0 ? item : (item[0].toUpperCase() + item.splice(1));
+            //     /*
+            //     原因是：
+            //         splice() 是数组的方法,用于移除/替换数组元素。
+            //         slice() 是字符串和数组的方法,用于提取部分元素。
+            //     */
+
+            //     // let strs = (index === 0) ? item : (item[0].toUpperCase() + item.slice(1));
+            //     // ⬇
+            //     return (index === 0) ? item : (item[0].toUpperCase() + item.slice(1));
+            // });
+            // console.log(strArray2);
+            // console.log(strArray2.join());
+            // 逻辑过程结束
+
+            //以上逻辑结束后优化代码
+            let strArray = str.split('-').map((item, index) => (index === 0 ? item : item[0].toUpperCase() + item.slice(1))).join('');
+            console.log(strArray);
+        }
+        camelize("background-color");
+        camelize("list-style-image");
+        camelize("-webkit-transition");
+    </script>
+</body>
+
+</html>
