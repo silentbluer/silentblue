@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>过滤范围</title>
+</head>
+
+<body>
+    <script>
+        /*
+
+        写一个函数 filterRange(arr, a, b)，该函数获取一个数组 arr，
+        在其中查找数值大于或等于 a，且小于或等于 b 的元素，并将结果以数组的形式返回。
+
+        该函数不应该修改原数组。它应该返回新的数组。
+
+        let arr = [5, 3, 8, 1];
+        let filtered = filterRange(arr, 1, 4);
+        console.log( filtered ); // 3,1（匹配值）
+        console.log( arr ); // 5,3,8,1（未修改）
+
+        */
+
+        // map()方法实现
+        function filterRanger(arr, a, b) {
+            let arrFilter = [];
+            arr.map((item) => {
+                if (item >= a && item <= b) {
+                    arrFilter.push(item);
+                };
+            });
+            // console.log('@', arrFilter);
+            return arrFilter;
+        }
+
+        //filter()方法实现
+        function filterRange(arr, a, b) {
+            return arr.filter((item) => item >= a && item <= b);
+        }
+
+        let arr = [5, 3, 8, 1];
+
+        let filterer = filterRanger(arr, 1, 4);//map()
+        let filtered = filterRange(arr, 1, 4);//filter()
+
+        console.log('filterer', filterer); // 3,1（匹配值）
+        console.log('filtered', filtered); // 3,1（匹配值）
+        console.log(arr); // 5,3,8,1（未修改）
+    </script>
+</body>
+
+</html>
