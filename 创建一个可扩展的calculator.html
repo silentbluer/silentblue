@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>创建一个可扩展的calculator</title>
+</head>
+
+<body>
+    <div class="task__formatted">
+        <p>创建一个构造函数 <code>Calculator</code>，以创建“可扩展”的 calculator 对象。</p>
+        <p>该任务由两部分组成。</p>
+        <ol>
+            <li>
+                <p>首先，实现 <code>calculate(str)</code> 方法，该方法接受像 <code>"1 + 2"</code> 这样格式为“数字 运算符
+                    数字”（以空格分隔）的字符串，并返回结果。该方法需要能够理解加号 <code>+</code> 和减号 <code>-</code>。</p>
+                <p>用法示例：</p>
+                <div id="ff950anqto" data-trusted="1" class="code-example" data-prism-highlighted="1">
+                    <div class="codebox code-example__codebox">
+                        <div class="codebox__code" data-code="1">
+                            <pre class="line-numbers  language-javascript"
+                                tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript"><span class="token keyword">let</span> calc <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Calculator</span><span class="token punctuation">;</span>
+
+        <span class="token function">alert</span><span class="token punctuation">(</span> calc<span class="token punctuation">.</span><span class="token function">calculate</span><span class="token punctuation">(</span><span class="token string">"3 + 7"</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 10</span></code></pre>
+                        </div>
+                    </div>
+
+                </div>
+            </li>
+            <li>
+                <p>然后添加方法 <code>addMethod(name, func)</code>，该方法教 calculator 进行新操作。它需要运算符 <code>name</code> 和实现它的双参数函数
+                    <code>func(a,b)</code>。
+                </p>
+                <p>例如，我们添加乘法 <code>*</code>，除法 <code>/</code> 和求幂 <code>**</code>：</p>
+                <div id="dvdjf9eflc" data-trusted="1" class="code-example" data-prism-highlighted="1">
+                    <div class="codebox code-example__codebox">
+
+                        <div class="codebox__code" data-code="1">
+                            <pre class="line-numbers  language-javascript"
+                                tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><span class="token keyword">let</span> powerCalc <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Calculator</span><span class="token punctuation">;</span>
+        powerCalc<span class="token punctuation">.</span><span class="token function">addMethod</span><span class="token punctuation">(</span><span class="token string">"*"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> a <span class="token operator">*</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        powerCalc<span class="token punctuation">.</span><span class="token function">addMethod</span><span class="token punctuation">(</span><span class="token string">"/"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> a <span class="token operator">/</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        powerCalc<span class="token punctuation">.</span><span class="token function">addMethod</span><span class="token punctuation">(</span><span class="token string">"**"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> a <span class="token operator">**</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">let</span> result <span class="token operator">=</span> powerCalc<span class="token punctuation">.</span><span class="token function">calculate</span><span class="token punctuation">(</span><span class="token string">"2 ** 3"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">alert</span><span class="token punctuation">(</span> result <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 8</span></code></pre>
+                        </div>
+                    </div>
+
+                </div>
+            </li>
+        </ol>
+        <ul>
+            <li>此任务中没有括号或复杂的表达式。</li>
+            <li>数字和运算符之间只有一个空格。</li>
+            <li>你可以自行选择是否添加错误处理功能。</li>
+        </ul>
+    </div>
+    <script>
+        let calc = new Calculator;
+        console.log(calc.calculate("3 + 7")); // 10
+    </script>
+</body>
+
+</html>
