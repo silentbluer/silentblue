@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>降序排列</title>
+</head>
+
+<body>
+    <script>
+        /*
+
+        let arr = [5, 2, 1, -10, 8];
+        ……你的代码以降序对其进行排序
+        alert( arr ); // 8, 5, 2, 1, -10
+
+
+        如果传了 compareFunction ，那么数组会按照调用该函数的返回值排序。即 a 和 b 是两个将要被比较的元素：
+        如果 compareFunction(a, b) return 的结果小于 0 ，那么 a 会被排列到 b 之前；
+        如果 compareFunction(a, b) return 的结果等于 0 ， a 和 b 的相对位置不变。
+        如果 compareFunction(a, b) return 的结果大于 0 ， b 会被排列到 a 之前。
+
+        */
+        let arr = [5, 2, 1, -10, 8];
+        // arr.sort((a, b) => (a > b) ? -1 : 1);
+        arr.sort((a, b) => b - a)
+
+        console.log(arr); // 8, 5, 2, 1, -10
+
+    </script>
+</body>
+
+</html>
