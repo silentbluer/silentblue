@@ -1,4 +1,14 @@
-### 一些JS原生属性方法的测试demo集合
+<span style="font-size:26px;font-weight:bold;">一些JS原生属性方法的测试demo集合</span>
+
+- [entries()、keys()、values()数组、对象遍历](#entrieskeysvalues数组对象遍历)
+- [过滤范围](#过滤范围)
+- [原位（in place）过滤范围](#原位in-place过滤范围)
+- [降序排列](#降序排列)
+- [复制和排序数组](#复制和排序数组)
+- [创建newCalculator](#创建newcalculator)
+- [创建 new Accumulator](#创建-new-accumulator)
+- [创建一个可扩展的 calculator](#创建一个可扩展的-calculator)
+
 
 #### entries()、keys()、values()数组、对象遍历
 
@@ -86,6 +96,28 @@ alert( "Sum=" + calculator.sum() );
 alert( "Mul=" + calculator.mul() );
 ```
 
+#### 创建 new Accumulator
+
+创建一个构造函数 `Accumulator(startingValue)`。
+
+它创建的对象应该：
+
+-   将“当前 value”存储在属性 `value` 中。起始值被设置到构造器 `startingValue` 的参数。
+-   `read()` 方法应该使用 `prompt` 来读取一个新的数字，并将其添加到 `value` 中。
+
+换句话说，`value` 属性是所有用户输入值与初始值 `startingValue` 的总和。
+
+下面是示例代码：
+
+```js
+let accumulator = new Accumulator(1); // 初始值 1
+
+accumulator.read(); // 添加用户输入的 value
+accumulator.read(); // 添加用户输入的 value
+
+alert(accumulator.value); // 显示这些值的总和
+```
+
 #### 创建一个可扩展的 calculator
 
 创建一个构造函数 `Calculator`，以创建“可扩展”的 calculator 对象。
@@ -98,7 +130,7 @@ alert( "Mul=" + calculator.mul() );
 
     ```javascript
     let calc = new Calculator;
-    
+
     alert( calc.calculate("3 + 7") ); // 10
     ```
 
@@ -111,7 +143,7 @@ alert( "Mul=" + calculator.mul() );
     powerCalc.addMethod("*", (a, b) => a * b);
     powerCalc.addMethod("/", (a, b) => a / b);
     powerCalc.addMethod("**", (a, b) => a ** b);
-    
+
     let result = powerCalc.calculate("2 ** 3");
     alert( result ); // 8
     ```
