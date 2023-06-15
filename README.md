@@ -50,3 +50,20 @@ alert( arr ); // 8, 5, 2, 1, -10
 - 返回负数,则 *a* 排在 *b* 前面
 - 返回正数,则 *b* 排在 *a* 前面
 - 返回 0 ,则相对位置不变
+
+#### 复制和排序数组
+
+我们有一个字符串数组 `arr`。我们希望有一个排序过的副本，但保持 `arr` 不变。
+
+创建一个函数 `copySorted(arr)` 返回这样一个副本。
+
+```js
+let arr = ["HTML", "JavaScript", "CSS"];
+
+let sorted = copySorted(arr);
+
+alert( sorted ); // CSS, HTML, JavaScript
+alert( arr ); // HTML, JavaScript, CSS (no changes)
+```
+
+>   考察点：数组的`slice()`方法，我们可以不带参数地调用它：`arr.slice()` 会创建一个 `arr` 的副本。其通常用于获取副本，以进行不影响原始数组的进一步转换。
