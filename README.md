@@ -122,6 +122,19 @@ alert(accumulator.value); // 显示这些值的总和
 
 创建一个构造函数 `Calculator`，以创建“可扩展”的 calculator 对象。
 
+>   -   obj[prop] : 当 prop 是一个变量时,需要使用 `[]` 访问
+>   -   obj.prop : 当 prop 是一个确定属性名时,可以直接使用 `.` 访问
+
+>   **构造函数特点:**
+>
+>   `new Fn()：`
+>
+>   构造函数内部会创建一个新的对象，即 `Fn` 的实例
+>
+>   函数内部的 `this` 指向 新创建的 `Fn` 的实例
+>
+>   默认的返回值是 `Fn` 的实例
+
 该任务由两部分组成。
 
 1.  首先，实现 `calculate(str)` 方法，该方法接受像 `"1 + 2"` 这样格式为“数字 运算符 数字”（以空格分隔）的字符串，并返回结果。该方法需要能够理解加号 `+` 和减号 `-`。
@@ -143,7 +156,7 @@ alert(accumulator.value); // 显示这些值的总和
     powerCalc.addMethod("*", (a, b) => a * b);
     powerCalc.addMethod("/", (a, b) => a / b);
     powerCalc.addMethod("**", (a, b) => a ** b);
-
+    
     let result = powerCalc.calculate("2 ** 3");
     alert( result ); // 8
     ```
