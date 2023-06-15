@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>创建newAccumulator</title>
+</head>
+
+<body>
+    <div class="task__formatted">
+        <p>创建一个构造函数 <code>Accumulator(startingValue)</code>。</p>
+        <p>它创建的对象应该：</p>
+        <ul>
+            <li>将“当前 value”存储在属性 <code>value</code> 中。起始值被设置到构造器 <code>startingValue</code> 的参数。</li>
+            <li><code>read()</code> 方法应该使用 <code>prompt</code> 来读取一个新的数字，并将其添加到 <code>value</code> 中。</li>
+        </ul>
+        <p>换句话说，<code>value</code> 属性是所有用户输入值与初始值 <code>startingValue</code> 的总和。</p>
+        <p>下面是示例代码：</p>
+        <div id="jxwmu2if3i" data-trusted="1" class="code-example" data-prism-highlighted="1">
+            <div class="codebox code-example__codebox">
+
+                <div class="codebox__code" data-code="1">
+                    <pre class="line-numbers  language-javascript"
+                        tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><span class="token keyword">let</span> accumulator <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Accumulator</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 初始值 1</span>
+
+    accumulator<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 添加用户输入的 value</span>
+    accumulator<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 添加用户输入的 value</span>
+
+    <span class="token function">alert</span><span class="token punctuation">(</span>accumulator<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 显示这些值的总和</span></code></pre>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        function Accumulator(startingValue) {
+            this.value = +startingValue;
+            // console.log(startingValue, this.value);
+            this.read = function () {
+                this.value += +prompt('请任意输入一个数字', 0)
+            }
+        };
+        let accumulator = new Accumulator(1); // 初始值 1
+
+        accumulator.read(); // 添加用户输入的 value
+        accumulator.read(); // 添加用户输入的 value
+
+        console.log('初始值为1，这些值的总和：', accumulator.value); // 显示这些值的总和
+    </script>
+</body>
+
+</html>
