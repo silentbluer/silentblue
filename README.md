@@ -68,6 +68,24 @@ alert( arr ); // HTML, JavaScript, CSS (no changes)
 
 >   考察点：数组的`slice()`方法，我们可以不带参数地调用它：`arr.slice()` 会创建一个 `arr` 的副本。其通常用于获取副本，以进行不影响原始数组的进一步转换。
 
+#### 创建newCalculator
+
+创建一个构造函数 `Calculator`，它创建的对象中有三个方法：
+
+-   `read()` 使用 `prompt` 请求两个值并把它们记录在对象的属性中。
+-   `sum()` 返回这些属性的总和。
+-   `mul()` 返回这些属性的乘积。
+
+例如：
+
+```js
+let calculator = new Calculator();
+calculator.read();
+
+alert( "Sum=" + calculator.sum() );
+alert( "Mul=" + calculator.mul() );
+```
+
 #### 创建一个可扩展的 calculator
 
 创建一个构造函数 `Calculator`，以创建“可扩展”的 calculator 对象。

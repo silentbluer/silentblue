@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>创建newCalculator</title>
+</head>
+
+<body>
+    <div class="task__formatted">
+        <p>创建一个构造函数 <code>Calculator</code>，它创建的对象中有三个方法：</p>
+        <ul>
+            <li><code>read()</code> 使用 <code>prompt</code> 请求两个值并把它们记录在对象的属性中。</li>
+            <li><code>sum()</code> 返回这些属性的总和。</li>
+            <li><code>mul()</code> 返回这些属性的乘积。</li>
+        </ul>
+        <p>例如：</p>
+        <div id="11fajdo24m" data-trusted="1" class="code-example" data-prism-highlighted="1">
+            <div class="codebox code-example__codebox">
+
+                <div class="codebox__code" data-code="1">
+                    <pre class="line-numbers  language-javascript"
+                        tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><span class="token keyword">let</span> calculator <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Calculator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        calculator<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token function">alert</span><span class="token punctuation">(</span> <span class="token string">"Sum="</span> <span class="token operator">+</span> calculator<span class="token punctuation">.</span><span class="token function">sum</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">alert</span><span class="token punctuation">(</span> <span class="token string">"Mul="</span> <span class="token operator">+</span> calculator<span class="token punctuation">.</span><span class="token function">mul</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        function Calculator() {
+            this.read = function () {
+                this.num1 = +prompt('请输入数字1', 0);
+                this.num2 = +prompt('请输入数字2', 0);
+            };
+            this.sum = function () {
+                return this.num1 + this.num2;
+            };
+            this.mul = function () {
+                return this.num1 * this.num2;
+            };
+        };
+        let calculator = new Calculator();
+        calculator.read();
+
+        console.log("Sum=" + calculator.sum());
+        console.log("Mul=" + calculator.mul());
+    </script>
+</body>
+
+</html>
