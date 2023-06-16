@@ -1,14 +1,16 @@
-<span style="font-size:26px;font-weight:bold;">一些JS原生属性方法的测试demo集合</span>
+### 一些JS原生属性方法的测试demo集合*
 
-- [entries()、keys()、values()数组、对象遍历](#entrieskeysvalues数组对象遍历)
-- [过滤范围](#过滤范围)
-- [原位（in place）过滤范围](#原位in-place过滤范围)
-- [降序排列](#降序排列)
-- [复制和排序数组](#复制和排序数组)
-- [创建newCalculator](#创建newcalculator)
-- [创建 new Accumulator](#创建-new-accumulator)
-- [创建一个可扩展的 calculator](#创建一个可扩展的-calculator)
-- [映射到 names](#映射到-names)
+- [**一些JS原生属性方法的测试demo集合**](#一些js原生属性方法的测试demo集合)
+  - [entries()、keys()、values()数组、对象遍历](#entrieskeysvalues数组对象遍历)
+  - [过滤范围](#过滤范围)
+  - [原位（in place）过滤范围](#原位in-place过滤范围)
+  - [降序排列](#降序排列)
+  - [复制和排序数组](#复制和排序数组)
+  - [创建newCalculator](#创建newcalculator)
+  - [创建 new Accumulator](#创建-new-accumulator)
+  - [创建一个可扩展的 calculator](#创建一个可扩展的-calculator)
+  - [映射到 names](#映射到-names)
+  - [映射到对象](#映射到对象)
 
 
 #### entries()、keys()、values()数组、对象遍历
@@ -191,3 +193,55 @@ alert( names ); // John, Pete, Mary
 >   方法二：
 >
 >   使用map()方法遍历users，并将每一项循环的user.name返回并存入names数组
+
+#### 映射到对象
+
+你有一个 `user` 对象数组，每个对象都有 `name`，`surname` 和 `id`。
+
+编写代码以该数组为基础，创建另一个具有 `id` 和 `fullName` 的对象数组，其中 `fullName` 由 `name` 和 `surname` 生成。
+
+```js
+let john = { name: "John", surname: "Smith", id: 1 };
+let pete = { name: "Pete", surname: "Hunt", id: 2 };
+let mary = { name: "Mary", surname: "Key", id: 3 };
+
+let users = [ john, pete, mary ];
+
+let usersMapped = /* ... your code ... */
+
+/*
+usersMapped = [
+  { fullName: "John Smith", id: 1 },
+  { fullName: "Pete Hunt", id: 2 },
+  { fullName: "Mary Key", id: 3 }
+]
+*/
+
+alert( usersMapped[0].id ) // 1
+alert( usersMapped[0].fullName ) // John Smith
+```
+
+所以，实际上你需要将一个对象数组映射到另一个对象数组。在这儿尝试使用箭头函数 `=>` 来编写。
+
+请注意，在箭头函数中，我们需要使用额外的括号。
+
+我们不能这样写：
+
+```js
+let usersMapped = users.map(user => {
+  fullName: `${user.name} ${user.surname}`,
+  id: user.id
+});
+```
+
+我们记得，有两种箭头函数的写法：直接返回值 `value => expr` 和带主体的 `value => {...}`。
+
+JavaScript 在这里会把 `{` 视为函数体的开始，而不是对象的开始。解决方法是将它们包装在普通括号 `()` 中：
+
+```js
+let usersMapped = users.map(user => ({
+  fullName: `${user.name} ${user.surname}`,
+  id: user.id
+}));
+```
+
