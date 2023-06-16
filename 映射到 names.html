@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>映射到 names</title>
+</head>
+
+<body>
+    <script>
+        let john = { name: "John", age: 25 };
+        let pete = { name: "Pete", age: 30 };
+        let mary = { name: "Mary", age: 28 };
+
+        // let users = [john, pete, mary];
+        let users = [
+            { name: "John", age: 25 },
+            { name: "Pete", age: 30 },
+            { name: "Mary", age: 28 }
+        ]
+
+        //写法一，for...of...
+        // let names = [];
+        // for (let item of users) {
+        //     names.push(item.name);
+        // }
+        //写法二，map()方法，遍历并返回结果数组，不改变原数组
+        let names = users.map(item => item.name);
+        console.log(names); // John, Pete, Mary
+    </script>
+</body>
+
+</html>

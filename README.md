@@ -8,6 +8,7 @@
 - [创建newCalculator](#创建newcalculator)
 - [创建 new Accumulator](#创建-new-accumulator)
 - [创建一个可扩展的 calculator](#创建一个可扩展的-calculator)
+- [映射到 names](#映射到-names)
 
 
 #### entries()、keys()、values()数组、对象遍历
@@ -164,3 +165,29 @@ alert(accumulator.value); // 显示这些值的总和
 -   此任务中没有括号或复杂的表达式。
 -   数字和运算符之间只有一个空格。
 -   你可以自行选择是否添加错误处理功能。
+
+#### 映射到 names
+
+你有一个 `user` 对象数组，每个对象都有 `user.name`。编写将其转换为 names 数组的代码。
+
+例如：
+
+```js
+let john = { name: "John", age: 25 };
+let pete = { name: "Pete", age: 30 };
+let mary = { name: "Mary", age: 28 };
+
+let users = [ john, pete, mary ];
+
+let names = /* ... your code */
+
+alert( names ); // John, Pete, Mary
+```
+
+>   方法一：
+>
+>   for…of…循环输出user并将user.name存入names数组
+>
+>   方法二：
+>
+>   使用map()方法遍历users，并将每一项循环的user.name返回并存入names数组
